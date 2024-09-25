@@ -1,13 +1,16 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NumberBox : MonoBehaviour {
     public int index = 0;
-    private int x = 0;
-    private int y = 0;
+    public int x = 0;
+    public int y = 0;
     private Action<int, int> swapFunc = null;
+    private SpriteRenderer spriteRenderer;
+
+    private void Awake() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     public void Init(int i, int j, int index, Sprite sprite, Action<int, int> swapFunc) {
         this.index = index;
@@ -23,8 +26,15 @@ public class NumberBox : MonoBehaviour {
     }
 
     public bool IsEmpty() {
-        // Ô trống sẽ có chỉ số tương ứng với kích thước lưới
         return index == (Puzzle.gridSize * Puzzle.gridSize);
+    }
+
+    public void Highlight(bool isActive) {
+        if (isActive) {
+            spriteRenderer.color = Color.yellow; // Đổi màu sang vàng
+        } else {
+            spriteRenderer.color = Color.white; // Trở lại màu trắng
+        }
     }
 
     private void OnMouseDown() {
