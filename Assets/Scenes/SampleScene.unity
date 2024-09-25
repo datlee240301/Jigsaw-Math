@@ -258,6 +258,32 @@ MonoBehaviour:
   - {fileID: -265768756, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
   - {fileID: -1064293362, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
   - {fileID: 0}
+  sprites2:
+  - {fileID: -978474519, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -724408433, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -1279418215, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -1415380207, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -621472957, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: 1267606951, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -211238168, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: 924292873, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -611042510, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: 419457530, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -11690262, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: 1689183260, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: 1242381627, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -265768756, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -1064293362, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -1064293362, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -1064293362, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -1064293362, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -1064293362, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -1064293362, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -1064293362, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -1064293362, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -1064293362, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: -1064293362, guid: 7fcad664bb8443b4e87ad73de59b39cc, type: 3}
+  - {fileID: 0}
 --- !u!4 &1641012556
 Transform:
   m_ObjectHideFlags: 0
