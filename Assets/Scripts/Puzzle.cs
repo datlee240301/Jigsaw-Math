@@ -16,7 +16,6 @@ public class Puzzle : MonoBehaviour {
     private List<NumberBox> selectedBoxes = new List<NumberBox>();
 
     private void Start() {
-        PlayerPrefs.SetInt(StringManager.layoutId, 1);
         int layoutId = PlayerPrefs.GetInt(StringManager.layoutId);
 
         if (layoutId == 0) {
@@ -150,6 +149,10 @@ public class Puzzle : MonoBehaviour {
             }
         }
         Debug.Log("Win");
+    }
+
+    private void Update() {
+        CheckWinCondition();
     }
 
     public void ToggleAlternateMode() {
