@@ -22,6 +22,7 @@ public class LevelButton : MonoBehaviour
         if(buttonImage.sprite == red) {
             if (buttonId <= 5) {
                 PlayerPrefs.SetInt(StringManager.layoutId, 0);
+                PlayerPrefs.SetInt(StringManager.levelId, buttonId);
             } else {
                 PlayerPrefs.SetInt(StringManager.layoutId, 1);
             }

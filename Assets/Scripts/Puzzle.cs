@@ -72,6 +72,7 @@ public class Puzzle : MonoBehaviour {
         boxes[x + dx, y + dy] = from;
         from.UpdatePos(x + dx, y + dy);
         target.UpdatePos(x, y);
+        FindObjectOfType<PlaySceneUiManager>().CountStep();
         CheckWinCondition();
     }
 
