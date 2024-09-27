@@ -30,7 +30,7 @@ public class LevelButton : MonoBehaviour {
             } else {
                 PlayerPrefs.SetInt(StringManager.layoutId, 1);
             }
-            SceneManager.LoadScene("PlayScene");
+            FindObjectOfType<PlaySceneUiManager>().LoadScene("PlayScene");
         }
     }
 

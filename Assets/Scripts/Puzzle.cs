@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Puzzle : MonoBehaviour {
     public NumberBox boxPrefabs;
@@ -13,6 +14,8 @@ public class Puzzle : MonoBehaviour {
     private Sprite[] selectedSprites;
     public static bool isAlternateMode = false;
     [SerializeField] GameObject fireWorkEffect;
+    [SerializeField] Image swapButton;
+    int clickCount = 0;
 
     private List<NumberBox> selectedBoxes = new List<NumberBox>();
 
@@ -128,6 +131,9 @@ public class Puzzle : MonoBehaviour {
 
         // Kết thúc di chuyển, trở lại trạng thái ban đầu
         isAlternateMode = false;
+        FindObjectOfType<PlaySceneUiManager>().MinusCoin();
+        clickCount = 0;
+        swapButton.color = Color.white;
         CheckWinCondition();
     }
 
@@ -152,6 +158,7 @@ public class Puzzle : MonoBehaviour {
             }
         }
         FindObjectOfType<PlaySceneUiManager>().winPanel.PanelFadeIn();
+        FindObjectOfType<PlaySceneUiManager>().RewardCoin();
         fireWorkEffect.SetActive(true);
         Debug.Log("Win");
     }
@@ -161,6 +168,18 @@ public class Puzzle : MonoBehaviour {
     }
 
     public void ToggleAlternateMode() {
-        isAlternateMode = true;
+        if (PlayerPrefs.GetInt(StringManager.coinNumber) > 0) {
+            clickCount++;
+            if (clickCount == 1) {
+                isAlternateMode = true;
+                swapButton.color = Color.green;
+            } else if (clickCount == 2) {
+                isAlternateMode = false;
+                clickCount = 0;
+                swapButton.color = Color.white;
+            }
+        } else {
+            FindObjectOfType<PlaySceneUiManager>().ShowNoTicePanel();
+        }
     }
 }
