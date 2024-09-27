@@ -32,8 +32,20 @@ public class PlaySceneUiManager : MonoBehaviour {
         stepText.text = "STEP: " + step.ToString();
     }
 
+
     /// Buttons Fucntions
+
     public void LoadScene(string sceneName) {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void NextLevelButton() {
+        int levelId = PlayerPrefs.GetInt(StringManager.levelId);
+        PlayerPrefs.SetInt(StringManager.levelId, levelId + 1);
+        if(PlayerPrefs.GetInt(StringManager.levelId) <= 5)
+            PlayerPrefs.SetInt(StringManager.layoutId, 0);
+        else
+            PlayerPrefs.SetInt(StringManager.layoutId, 1);
+        LoadScene("PlayScene");
     }
 }

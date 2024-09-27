@@ -36,7 +36,7 @@ public class LevelButton : MonoBehaviour
         levelText.text = buttonId.ToString();
         startLevelId = PlayerPrefs.GetInt(StringManager.levelId, 1);
         PlayerPrefs.SetInt(StringManager.levelId, startLevelId);
-        if (buttonId == PlayerPrefs.GetInt(StringManager.levelId))
+        if (buttonId <= PlayerPrefs.GetInt(StringManager.levelId))
             buttonImage.sprite = red;
         else
             buttonImage.sprite = blue;

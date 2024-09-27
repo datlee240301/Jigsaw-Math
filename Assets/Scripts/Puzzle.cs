@@ -127,6 +127,7 @@ public class Puzzle : MonoBehaviour {
 
         // Kết thúc di chuyển, trở lại trạng thái ban đầu
         isAlternateMode = false;
+        CheckWinCondition();
     }
 
     int getDx(int x, int y) {
