@@ -16,6 +16,7 @@ public class PlaySceneUiManager : MonoBehaviour {
         levelText.text = "LEVEL " + PlayerPrefs.GetInt(StringManager.levelId).ToString();
         Debug.Log(PlayerPrefs.GetInt(StringManager.levelId));
         Debug.Log(PlayerPrefs.GetInt(StringManager.layoutId));
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame

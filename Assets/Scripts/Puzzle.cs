@@ -12,6 +12,7 @@ public class Puzzle : MonoBehaviour {
     public static int gridSize;
     private Sprite[] selectedSprites;
     public static bool isAlternateMode = false;
+    [SerializeField] GameObject fireWorkEffect;
 
     private List<NumberBox> selectedBoxes = new List<NumberBox>();
 
@@ -151,6 +152,7 @@ public class Puzzle : MonoBehaviour {
             }
         }
         FindObjectOfType<PlaySceneUiManager>().winPanel.PanelFadeIn();
+        fireWorkEffect.SetActive(true);
         Debug.Log("Win");
     }
 

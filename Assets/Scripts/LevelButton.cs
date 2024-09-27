@@ -16,6 +16,7 @@ public class LevelButton : MonoBehaviour
     void Start()
     {
         SetUpButtonStatus();
+        Application.targetFrameRate = 60;
     }
 
     public void LoadScene() {
