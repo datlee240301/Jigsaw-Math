@@ -3,19 +3,29 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlaySceneUiManager : MonoBehaviour {
     [SerializeField] TextMeshProUGUI stepText;
     public int step;
     [SerializeField] TextMeshProUGUI levelText;
     public UiPanelDotween winPanel;
+    [SerializeField] Image musicButton;
+    [SerializeField] Sprite musicOn;
+    [SerializeField] Sprite musicOff;
 
     // Start is called before the first frame update
     void Start() {
-        stepText.text = "STEP: " + step.ToString();
-        levelText.text = "LEVEL " + PlayerPrefs.GetInt(StringManager.levelId).ToString();
-        Debug.Log(PlayerPrefs.GetInt(StringManager.levelId));
-        Debug.Log(PlayerPrefs.GetInt(StringManager.layoutId));
+        if (SceneManager.GetActiveScene().name == "PlayScene") {
+            stepText.text = "STEP: " + step.ToString();
+            levelText.text = "LEVEL " + PlayerPrefs.GetInt(StringManager.levelId).ToString();
+            Debug.Log(PlayerPrefs.GetInt(StringManager.levelId));
+            Debug.Log(PlayerPrefs.GetInt(StringManager.layoutId));
+        } else if (SceneManager.GetActiveScene().name == "SelectLevelScene") {
+
+        } else if (SceneManager.GetActiveScene().name == "HomeScene") {
+            SetMusicStatus();
+        }
         Application.targetFrameRate = 60;
     }
 
@@ -33,6 +43,18 @@ public class PlaySceneUiManager : MonoBehaviour {
         stepText.text = "STEP: " + step.ToString();
     }
 
+    void SetMusicStatus() {
+        int musicButtonStatus = PlayerPrefs.GetInt(StringManager.musicStatus,1);
+        PlayerPrefs.SetInt(StringManager.musicStatus, musicButtonStatus);
+
+        if (musicButtonStatus == 1) {
+            musicButton.sprite = musicOn;
+        }
+        else {
+            musicButton.sprite = musicOff;
+        }
+    }
+
 
     /// Buttons Fucntions
 
@@ -43,7 +65,7 @@ public class PlaySceneUiManager : MonoBehaviour {
     public void NextLevelButton() {
         int levelId = PlayerPrefs.GetInt(StringManager.levelId);
         PlayerPrefs.SetInt(StringManager.levelId, levelId + 1);
-        if(PlayerPrefs.GetInt(StringManager.levelId) <= 5)
+        if (PlayerPrefs.GetInt(StringManager.levelId) <= 5)
             PlayerPrefs.SetInt(StringManager.layoutId, 0);
         else
             PlayerPrefs.SetInt(StringManager.layoutId, 1);
@@ -54,5 +76,15 @@ public class PlaySceneUiManager : MonoBehaviour {
         int levelId = PlayerPrefs.GetInt(StringManager.levelId);
         PlayerPrefs.SetInt(StringManager.levelId, levelId + 1);
         LoadScene("SelectLevelScene");
+    }
+
+    public void MusicButton() {
+        if (musicButton.sprite == musicOn) {
+            musicButton.sprite = musicOff;
+            PlayerPrefs.SetInt(StringManager.musicStatus, 0);
+        } else {
+            musicButton.sprite = musicOn;
+            PlayerPrefs.SetInt(StringManager.musicStatus, 1);
+        }
     }
 }
