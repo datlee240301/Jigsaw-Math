@@ -209,7 +209,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 179705266}
   m_Layer: 5
   m_Name: Yellow Star 1
-  m_TagString: Untagged
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -769,7 +769,7 @@ GameObject:
   - component: {fileID: 228920159}
   m_Layer: 5
   m_Name: WinPanelObject
-  m_TagString: Untagged
+  m_TagString: WinPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -810,6 +810,10 @@ MonoBehaviour:
   canvasGroup: {fileID: 688877125}
   rectTransform: {fileID: 688877122}
   panelblack: {fileID: 688877121}
+  stars:
+  - {fileID: 179705264}
+  - {fileID: 1799803004}
+  - {fileID: 1255475862}
 --- !u!1 &255092235
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,7 +924,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9.3, y: -4.3}
+  m_AnchoredPosition: {x: -9.299999, y: -4.299999}
   m_SizeDelta: {x: 117.6, y: 32.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305308624
@@ -2008,7 +2012,7 @@ GameObject:
   - component: {fileID: 1255475864}
   m_Layer: 5
   m_Name: Yellow Star 3
-  m_TagString: Untagged
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2502,6 +2506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepText: {fileID: 32929689}
+  step: 0
   levelText: {fileID: 38780763}
   winPanel: {fileID: 228920159}
 --- !u!1 &1487503002
@@ -2538,7 +2543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -118.1, y: -108}
+  m_AnchoredPosition: {x: -118.100006, y: -108}
   m_SizeDelta: {x: 140.5166, y: 67.3445}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1641012554
@@ -2799,7 +2804,7 @@ GameObject:
   - component: {fileID: 1799803006}
   m_Layer: 5
   m_Name: Yellow Star 2
-  m_TagString: Untagged
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

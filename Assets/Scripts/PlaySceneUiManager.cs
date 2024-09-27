@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlaySceneUiManager : MonoBehaviour {
     [SerializeField] TextMeshProUGUI stepText;
-    int step;
+    public int step;
     [SerializeField] TextMeshProUGUI levelText;
     public UiPanelDotween winPanel;
 

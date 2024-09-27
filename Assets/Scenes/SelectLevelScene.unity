@@ -296,6 +296,10 @@ MonoBehaviour:
   blue: {fileID: 21300000, guid: 7a7d4df3ae7a6844ebac5d027017bbdf, type: 3}
   red: {fileID: 21300000, guid: 2d1f41ff1beec434798588bd74ca4e58, type: 3}
   levelText: {fileID: 168480017}
+  stars:
+  - {fileID: 166432866}
+  - {fileID: 469932098}
+  - {fileID: 237380962}
   buttonId: 1
 --- !u!114 &32358478
 MonoBehaviour:
@@ -2880,6 +2884,10 @@ MonoBehaviour:
   blue: {fileID: 21300000, guid: 7a7d4df3ae7a6844ebac5d027017bbdf, type: 3}
   red: {fileID: 21300000, guid: 2d1f41ff1beec434798588bd74ca4e58, type: 3}
   levelText: {fileID: 47346574}
+  stars:
+  - {fileID: 1116650114}
+  - {fileID: 300235232}
+  - {fileID: 658435350}
   buttonId: 2
 --- !u!114 &587204976
 MonoBehaviour:
@@ -4861,6 +4869,10 @@ MonoBehaviour:
   blue: {fileID: 21300000, guid: 7a7d4df3ae7a6844ebac5d027017bbdf, type: 3}
   red: {fileID: 21300000, guid: 2d1f41ff1beec434798588bd74ca4e58, type: 3}
   levelText: {fileID: 761669457}
+  stars:
+  - {fileID: 1912087490}
+  - {fileID: 1324915896}
+  - {fileID: 767980573}
   buttonId: 10
 --- !u!114 &1093344769
 MonoBehaviour:
@@ -5713,6 +5725,10 @@ MonoBehaviour:
   blue: {fileID: 21300000, guid: 7a7d4df3ae7a6844ebac5d027017bbdf, type: 3}
   red: {fileID: 21300000, guid: 2d1f41ff1beec434798588bd74ca4e58, type: 3}
   levelText: {fileID: 1687283813}
+  stars:
+  - {fileID: 1845502306}
+  - {fileID: 1985275293}
+  - {fileID: 136463869}
   buttonId: 5
 --- !u!114 &1216443232
 MonoBehaviour:
@@ -5942,6 +5958,10 @@ MonoBehaviour:
   blue: {fileID: 21300000, guid: 7a7d4df3ae7a6844ebac5d027017bbdf, type: 3}
   red: {fileID: 21300000, guid: 2d1f41ff1beec434798588bd74ca4e58, type: 3}
   levelText: {fileID: 335830318}
+  stars:
+  - {fileID: 760666390}
+  - {fileID: 993198171}
+  - {fileID: 1207668292}
   buttonId: 3
 --- !u!114 &1270022506
 MonoBehaviour:
@@ -6668,6 +6688,10 @@ MonoBehaviour:
   blue: {fileID: 21300000, guid: 7a7d4df3ae7a6844ebac5d027017bbdf, type: 3}
   red: {fileID: 21300000, guid: 2d1f41ff1beec434798588bd74ca4e58, type: 3}
   levelText: {fileID: 1208402383}
+  stars:
+  - {fileID: 1054679858}
+  - {fileID: 1433433948}
+  - {fileID: 4975244}
   buttonId: 6
 --- !u!114 &1354309302
 MonoBehaviour:
@@ -7048,6 +7072,10 @@ MonoBehaviour:
   blue: {fileID: 21300000, guid: 7a7d4df3ae7a6844ebac5d027017bbdf, type: 3}
   red: {fileID: 21300000, guid: 2d1f41ff1beec434798588bd74ca4e58, type: 3}
   levelText: {fileID: 362344493}
+  stars:
+  - {fileID: 833534900}
+  - {fileID: 1385291350}
+  - {fileID: 1644272526}
   buttonId: 8
 --- !u!114 &1428449387
 MonoBehaviour:
@@ -8127,6 +8155,10 @@ MonoBehaviour:
   blue: {fileID: 21300000, guid: 7a7d4df3ae7a6844ebac5d027017bbdf, type: 3}
   red: {fileID: 21300000, guid: 2d1f41ff1beec434798588bd74ca4e58, type: 3}
   levelText: {fileID: 1328538099}
+  stars:
+  - {fileID: 852817591}
+  - {fileID: 722066117}
+  - {fileID: 935972652}
   buttonId: 9
 --- !u!114 &1719712662
 MonoBehaviour:
@@ -8393,6 +8425,10 @@ MonoBehaviour:
   blue: {fileID: 21300000, guid: 7a7d4df3ae7a6844ebac5d027017bbdf, type: 3}
   red: {fileID: 21300000, guid: 2d1f41ff1beec434798588bd74ca4e58, type: 3}
   levelText: {fileID: 1291002796}
+  stars:
+  - {fileID: 1543921370}
+  - {fileID: 706155736}
+  - {fileID: 2019338832}
   buttonId: 7
 --- !u!114 &1761626315
 MonoBehaviour:
@@ -9059,6 +9095,10 @@ MonoBehaviour:
   blue: {fileID: 21300000, guid: 7a7d4df3ae7a6844ebac5d027017bbdf, type: 3}
   red: {fileID: 21300000, guid: 2d1f41ff1beec434798588bd74ca4e58, type: 3}
   levelText: {fileID: 1830957764}
+  stars:
+  - {fileID: 1274063076}
+  - {fileID: 136853799}
+  - {fileID: 1662064598}
   buttonId: 4
 --- !u!114 &1847528857
 MonoBehaviour:

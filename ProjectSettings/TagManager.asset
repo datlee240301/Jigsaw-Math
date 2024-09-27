@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - NextLevelButton
+  - Particle
+  - WinPanel
+  - Star
   layers:
   - Default
   - TransparentFX
