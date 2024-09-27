@@ -8,7 +8,7 @@ public class PlaySceneUiManager : MonoBehaviour {
     [SerializeField] TextMeshProUGUI stepText;
     int step;
     [SerializeField] TextMeshProUGUI levelText;
-    public GameObject winPanel;
+    public UiPanelDotween winPanel;
 
     // Start is called before the first frame update
     void Start() {
@@ -47,5 +47,11 @@ public class PlaySceneUiManager : MonoBehaviour {
         else
             PlayerPrefs.SetInt(StringManager.layoutId, 1);
         LoadScene("PlayScene");
+    }
+
+    public void LoadLevelScene() {
+        int levelId = PlayerPrefs.GetInt(StringManager.levelId);
+        PlayerPrefs.SetInt(StringManager.levelId, levelId + 1);
+        LoadScene("SelectLevelScene");
     }
 }

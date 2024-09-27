@@ -150,7 +150,7 @@ public class Puzzle : MonoBehaviour {
                 expectedIndex++;
             }
         }
-        FindObjectOfType<PlaySceneUiManager>().winPanel.SetActive(true);
+        FindObjectOfType<PlaySceneUiManager>().winPanel.PanelFadeIn();
         Debug.Log("Win");
     }
 
