@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Upgrade-StarBase-1_0: 1059959093592240263
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

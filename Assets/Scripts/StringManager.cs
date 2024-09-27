@@ -3,6 +3,7 @@ using UnityEngine;
 internal class StringManager {
     internal static string layoutId = "layoutId";
     internal static string levelId = "levelId";
+    internal static string coinNumber = "coinNumber";
     internal static string musicStatus = "musicStatus";
     internal static string level1Star = "level1Star";
     internal static string level2Star = "level2Star";

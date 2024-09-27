@@ -13,6 +13,8 @@ public class PlaySceneUiManager : MonoBehaviour {
     [SerializeField] Image musicButton;
     [SerializeField] Sprite musicOn;
     [SerializeField] Sprite musicOff;
+    [SerializeField] TextMeshProUGUI coinNumberText;
+    int coinNumber;
 
     // Start is called before the first frame update
     void Start() {
@@ -25,6 +27,8 @@ public class PlaySceneUiManager : MonoBehaviour {
 
         } else if (SceneManager.GetActiveScene().name == "HomeScene") {
             SetMusicStatus();
+            coinNumber = PlayerPrefs.GetInt(StringManager.coinNumber);
+            coinNumberText.text = coinNumber.ToString();
         }
         Application.targetFrameRate = 60;
     }
@@ -44,13 +48,12 @@ public class PlaySceneUiManager : MonoBehaviour {
     }
 
     void SetMusicStatus() {
-        int musicButtonStatus = PlayerPrefs.GetInt(StringManager.musicStatus,1);
+        int musicButtonStatus = PlayerPrefs.GetInt(StringManager.musicStatus, 1);
         PlayerPrefs.SetInt(StringManager.musicStatus, musicButtonStatus);
 
         if (musicButtonStatus == 1) {
             musicButton.sprite = musicOn;
-        }
-        else {
+        } else {
             musicButton.sprite = musicOff;
         }
     }
@@ -86,5 +89,11 @@ public class PlaySceneUiManager : MonoBehaviour {
             musicButton.sprite = musicOn;
             PlayerPrefs.SetInt(StringManager.musicStatus, 1);
         }
+    }
+
+    public void BuyCoin(int number) {
+        int newCoinNumber = PlayerPrefs.GetInt(StringManager.coinNumber) + number;
+        PlayerPrefs.SetInt(StringManager.coinNumber, newCoinNumber);
+        coinNumberText.text = newCoinNumber.ToString();
     }
 }
