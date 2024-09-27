@@ -23,7 +23,7 @@ public class LevelButton : MonoBehaviour
             if (buttonId <= 5) {
                 PlayerPrefs.SetInt(StringManager.layoutId, 0);
                 PlayerPrefs.SetInt(StringManager.levelId, buttonId);
-            } else {
+            } else if(buttonId > 5) {
                 PlayerPrefs.SetInt(StringManager.layoutId, 1);
             }
             SceneManager.LoadScene("PlayScene");
@@ -40,6 +40,6 @@ public class LevelButton : MonoBehaviour
             buttonImage.sprite = red;
         else
             buttonImage.sprite = blue;
-        Debug.Log(PlayerPrefs.GetInt(StringManager.levelId));
+        //Debug.Log(PlayerPrefs.GetInt(StringManager.levelId));
     }
 }

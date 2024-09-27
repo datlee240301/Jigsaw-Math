@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9ed82a5bfa5fbc7459b526f4b05ebaa7
+guid: d3f2b509e20fdea4da95dd55c628b1dc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3338749442709606003
-    second: Coin_0
+      213: -8644459403173286501
+    second: Upgrade-StarBase 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Coin_0
+      name: Upgrade-StarBase 1_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 2
-        width: 81
-        height: 86
+        x: 11
+        y: 16
+        width: 217
+        height: 209
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d81b24142116aa1d0800000000000000
-      internalID: -3338749442709606003
+      spriteID: b9d229e19f5b80880800000000000000
+      internalID: -8644459403173286501
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Coin_0: -3338749442709606003
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

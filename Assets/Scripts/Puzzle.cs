@@ -149,11 +149,12 @@ public class Puzzle : MonoBehaviour {
                 expectedIndex++;
             }
         }
+        FindObjectOfType<PlaySceneUiManager>().winPanel.SetActive(true);
         Debug.Log("Win");
     }
 
     private void Update() {
-        CheckWinCondition();
+        //CheckWinCondition();
     }
 
     public void ToggleAlternateMode() {
