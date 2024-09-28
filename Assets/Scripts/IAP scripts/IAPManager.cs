@@ -12,6 +12,7 @@ public class IAPManager : Singleton<IAPManager>, IDetailedStoreListener
 {
     public PlaySceneUiManager shopRuby;
     private List<ItemIAP> listItems = new List<ItemIAP>();
+    [SerializeField] GameObject noDataBoard;
 
     const string PACK_1 = "com.jigsawmath.pack1";
     const string PACK_2 = "com.jigsawmath.pack2";
@@ -158,6 +159,7 @@ public class IAPManager : Singleton<IAPManager>, IDetailedStoreListener
             }
         }    
         ShopManager.Instance.SetLayoutItemIAP(listItems, ListPosPack);
+        noDataBoard.SetActive(false);
     }
 
     public void OnInitializeFailed(InitializationFailureReason error, string message)
