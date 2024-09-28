@@ -20,6 +20,7 @@ public class UiPanelDotween : MonoBehaviour {
         canvasGroup.DOFade(1, fadeTime);
         panelblack.SetActive(true);
         SetStarNumber();
+        FindObjectOfType<SoundManager>().PlayClickSound();
     }
 
     public void PanelFadeOut() {
@@ -28,6 +29,7 @@ public class UiPanelDotween : MonoBehaviour {
         rectTransform.DOAnchorPos(new Vector2(0, -2500f), fadeTime, false).SetEase(Ease.InOutBack);
         canvasGroup.DOFade(1, fadeTime);
         StartCoroutine(HidePanel());
+        FindObjectOfType<SoundManager>().PlayClickSound();
     }
 
     IEnumerator HidePanel() {

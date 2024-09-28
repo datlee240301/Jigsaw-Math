@@ -15,6 +15,7 @@ public class Puzzle : MonoBehaviour {
     public static bool isAlternateMode = false;
     [SerializeField] GameObject fireWorkEffect;
     [SerializeField] Image swapButton;
+    [SerializeField] GameObject battleField; // GameObject battleField
     int clickCount = 0;
 
     private List<NumberBox> selectedBoxes = new List<NumberBox>();
@@ -32,8 +33,12 @@ public class Puzzle : MonoBehaviour {
 
         boxes = new NumberBox[gridSize, gridSize];
         Init();
+
+        // Sau khi khởi tạo lưới, đặt vị trí của battleField
+        PositionBattleField();
     }
 
+    // Khởi tạo các ô trên lưới
     void Init() {
         List<Vector2> availablePositions = new List<Vector2>();
 
@@ -57,6 +62,16 @@ public class Puzzle : MonoBehaviour {
         }
     }
 
+    void PositionBattleField() {
+        // Tính toán vị trí trung tâm của lưới
+        float centerX = (gridSize - 1) / 2.0f;
+        float centerY = (gridSize - 1) / 2.0f;
+        Vector3 gridCenter = new Vector3(centerX, centerY, 0);
+        battleField.transform.position = gridCenter;
+        if(PlayerPrefs.GetInt(StringManager.layoutId) == 1)
+            battleField.transform.localScale = new Vector2(0.56f, 0.56f);
+    }
+
     void ClickToSwap(int x, int y) {
         if (isAlternateMode) {
             HandleAlternateClick(x, y);
@@ -77,6 +92,7 @@ public class Puzzle : MonoBehaviour {
         from.UpdatePos(x + dx, y + dy);
         target.UpdatePos(x, y);
         FindObjectOfType<PlaySceneUiManager>().CountStep();
+        FindObjectOfType<SoundManager>().PlayMoveBoxSound();
         CheckWinCondition();
     }
 
@@ -101,7 +117,7 @@ public class Puzzle : MonoBehaviour {
 
         float duration = 0.5f;
         float elapsedTime = 0f;
-
+        FindObjectOfType<SoundManager>().PlayExchangeSound();
         while (elapsedTime < duration) {
             box1.transform.localPosition = Vector2.Lerp(pos1, pos2, elapsedTime / duration);
             box2.transform.localPosition = Vector2.Lerp(pos2, pos1, elapsedTime / duration);
@@ -159,6 +175,8 @@ public class Puzzle : MonoBehaviour {
         }
         FindObjectOfType<PlaySceneUiManager>().winPanel.PanelFadeIn();
         FindObjectOfType<PlaySceneUiManager>().RewardCoin();
+        FindObjectOfType<SoundManager>().PlayFireworkSound();
+        FindObjectOfType<SoundManager>().PlayWinSound();
         fireWorkEffect.SetActive(true);
         Debug.Log("Win");
     }
@@ -168,6 +186,7 @@ public class Puzzle : MonoBehaviour {
     }
 
     public void ToggleAlternateMode() {
+        FindObjectOfType<SoundManager>().PlayClickSound();
         if (PlayerPrefs.GetInt(StringManager.coinNumber) > 0) {
             clickCount++;
             if (clickCount == 1) {

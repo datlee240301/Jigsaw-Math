@@ -39,5 +39,6 @@ public class HomeSceneUiManager : MonoBehaviour
             musicButton.sprite = musicOn;
             PlayerPrefs.SetInt(StringManager.musicStatus, 1);
         }
+        FindObjectOfType<SoundManager>().PlayClickSound();
     }
 }

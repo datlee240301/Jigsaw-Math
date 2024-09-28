@@ -44,35 +44,32 @@ public class PlaySceneUiManager : MonoBehaviour {
 
     }
 
-    // Hiển thị object
     public void ShowObject(GameObject obj) {
         obj.SetActive(true);
     }
 
-    // Tăng số bước di chuyển và cập nhật text
     public void CountStep() {
         step++;
         stepText.text = "STEP: " + step.ToString();
     }
 
-    // Cài đặt trạng thái nhạc
     void SetMusicStatus() {
         int musicButtonStatus = PlayerPrefs.GetInt(StringManager.musicStatus, 1);
         PlayerPrefs.SetInt(StringManager.musicStatus, musicButtonStatus);
 
         if (musicButtonStatus == 1) {
             musicButton.sprite = musicOn;
+            FindObjectOfType<MusicManager>().audioSource.volume = 1;
         } else {
             musicButton.sprite = musicOff;
+            FindObjectOfType<MusicManager>().audioSource.volume = 0;
         }
     }
 
-    // Hiển thị bảng thông báo
     public void ShowNoTicePanel() {
         notificationPanel.PanelFadeIn();
     }
 
-    // Cộng thêm 10 coin vào tổng số coin và cập nhật text
     public void RewardCoin() {
         int newCoinNumber = PlayerPrefs.GetInt(StringManager.coinNumber) + 10;
         PlayerPrefs.SetInt(StringManager.coinNumber, newCoinNumber);
@@ -86,28 +83,24 @@ public class PlaySceneUiManager : MonoBehaviour {
 
     // Chuyển cảnh với hiệu ứng fade
     public void LoadScene(string sceneName) {
-        StartCoroutine(FadeAndLoadScene(sceneName)); // Bắt đầu coroutine fade
+        FindObjectOfType<SoundManager>().PlayClickSound();
+        StartCoroutine(FadeAndLoadScene(sceneName)); 
     }
 
-    // Coroutine để fade màn hình và sau đó load scene
     private IEnumerator FadeAndLoadScene(string sceneName) {
         fadeImage.gameObject.SetActive(true);
-       // fadeDuration = 1f; // Thời gian fade (tính bằng giây)
         float currentTime = 0f;
 
-        // Dần dần tăng alpha của fadeImage từ 0 đến 1
         while (currentTime < fadeDuration) {
             currentTime += Time.deltaTime;
             float alpha = Mathf.Lerp(0, 1, currentTime / fadeDuration);
-            fadeImage.color = new Color(0, 0, 0, alpha); // Đặt alpha cho Image
-            yield return null; // Đợi frame tiếp theo
+            fadeImage.color = new Color(0, 0, 0, alpha); 
+            yield return null; 
         }
 
-        // Khi fade hoàn tất, load scene mới
         SceneManager.LoadScene(sceneName);
     }
 
-    // Chuyển tới level tiếp theo
     public void NextLevelButton() {
         int levelId = PlayerPrefs.GetInt(StringManager.levelId);
         PlayerPrefs.SetInt(StringManager.levelId, levelId + 1);
@@ -115,35 +108,37 @@ public class PlaySceneUiManager : MonoBehaviour {
             PlayerPrefs.SetInt(StringManager.layoutId, 0);
         else
             PlayerPrefs.SetInt(StringManager.layoutId, 1);
+        FindObjectOfType<SoundManager>().PlayClickSound();
         LoadScene("PlayScene");
     }
 
-    // Chuyển tới màn hình chọn level
     public void LoadLevelScene() {
         int levelId = PlayerPrefs.GetInt(StringManager.levelId);
         PlayerPrefs.SetInt(StringManager.levelId, levelId + 1);
+        FindObjectOfType<SoundManager>().PlayClickSound();
         LoadScene("SelectLevelScene");
     }
 
-    // Bật/tắt nhạc khi ấn vào nút
     public void MusicButton() {
         if (musicButton.sprite == musicOn) {
             musicButton.sprite = musicOff;
             PlayerPrefs.SetInt(StringManager.musicStatus, 0);
+            FindObjectOfType<MusicManager>().audioSource.volume = 0;
         } else {
             musicButton.sprite = musicOn;
             PlayerPrefs.SetInt(StringManager.musicStatus, 1);
+            FindObjectOfType<MusicManager>().audioSource.volume = 1;
         }
+        FindObjectOfType<SoundManager>().PlayClickSound();
     }
 
-    // Mua thêm coin
     public void BuyCoin(int number) {
         int newCoinNumber = PlayerPrefs.GetInt(StringManager.coinNumber) + number;
         PlayerPrefs.SetInt(StringManager.coinNumber, newCoinNumber);
         coinNumberText.text = newCoinNumber.ToString();
+        FindObjectOfType<SoundManager>().PlayClickSound();
     }
 
-    // Trừ coin
     public void MinusCoin() {
         int newCoinNumber = PlayerPrefs.GetInt(StringManager.coinNumber) - 5;
         PlayerPrefs.SetInt(StringManager.coinNumber, newCoinNumber);
