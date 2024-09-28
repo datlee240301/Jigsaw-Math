@@ -1,0 +1,11 @@
+# ninja log v5
+327	2893	7492132015966272	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	69a22d9f630d0e6b
+13	3862	7492132025918104	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	f5abe1e3e2e1af14
+146	4260	7492132027972146	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	76cb42721fcd8415
+318	4261	7492132026914333	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	d3e2ccedc33790ea
+175	4534	7492132031107309	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	8ea55d584b9ac367
+95	4541	7492132032654212	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	6e6fa83869a775c4
+167	5329	7492132042324078	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	d0cf50bc8956e8e0
+2895	5446	7492132036035960	C:/Users/nhnin/Videos/UnityZone/GitHub/Jigsaw-Math/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6mx3k5x2/obj/arm64-v8a/libswappywrapper.so	2f7c0359a665ea65
+1	5528	7492132044627468	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	487684822fe464bd
+5529	5788	7492132046298883	C:/Users/nhnin/Videos/UnityZone/GitHub/Jigsaw-Math/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6mx3k5x2/obj/arm64-v8a/libgame.so	eaca3ed9cde8ed4f

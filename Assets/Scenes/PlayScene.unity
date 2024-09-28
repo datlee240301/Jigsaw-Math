@@ -2657,7 +2657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1228453740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3979,7 +3979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1726922578
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4702,8 +4702,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1458615499}
         m_TargetAssemblyTypeName: PlaySceneUiManager, Assembly-CSharp
-        m_MethodName: LoadLevelScene
-        m_Mode: 1
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
