@@ -16,6 +16,7 @@ public class PlaySceneUiManager : MonoBehaviour {
     int coinNumber;
     [SerializeField] Camera camera;
     [SerializeField] UiPanelDotween notificationPanel;
+    [SerializeField] UiPanelDotween completeLevelNotificationPanel;
     [SerializeField] Image fadeImage; // Image màu đen dùng để fade
     float fadeDuration = .5f;
 
@@ -68,6 +69,10 @@ public class PlaySceneUiManager : MonoBehaviour {
 
     public void ShowNoTicePanel() {
         notificationPanel.PanelFadeIn();
+    }
+
+    public void ShowCompleteLevelPanel() {
+        completeLevelNotificationPanel.PanelFadeIn();
     }
 
     public void RewardCoin() {

@@ -33,6 +33,8 @@ public class LevelButton : MonoBehaviour {
             FindObjectOfType<SoundManager>().PlayClickSound();
             FindObjectOfType<PlaySceneUiManager>().LoadScene("PlayScene");
         }
+        else
+            FindObjectOfType<PlaySceneUiManager>().ShowCompleteLevelPanel();
     }
 
     // Thiết lập trạng thái màu của button
