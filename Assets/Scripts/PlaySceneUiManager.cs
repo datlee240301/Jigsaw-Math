@@ -25,7 +25,7 @@ public class PlaySceneUiManager : MonoBehaviour {
         if (SceneManager.GetActiveScene().name == "PlayScene") {
             stepText.text = "STEP: " + step.ToString();
             levelText.text = "LEVEL " + PlayerPrefs.GetInt(StringManager.levelId).ToString();
-            coinNumber = PlayerPrefs.GetInt(StringManager.coinNumber,10);
+            coinNumber = PlayerPrefs.GetInt(StringManager.coinNumber, 10);
             //PlayerPrefs.SetInt(StringManager.coinNumber, coinNumber);
             coinNumberText.text = coinNumber.ToString();
             if (PlayerPrefs.GetInt(StringManager.layoutId) == 1) {
@@ -91,7 +91,7 @@ public class PlaySceneUiManager : MonoBehaviour {
     // Chuyển cảnh với hiệu ứng fade
     public void LoadScene(string sceneName) {
         FindObjectOfType<SoundManager>().PlayClickSound();
-        StartCoroutine(FadeAndLoadScene(sceneName)); 
+        StartCoroutine(FadeAndLoadScene(sceneName));
     }
 
     private IEnumerator FadeAndLoadScene(string sceneName) {
@@ -101,22 +101,26 @@ public class PlaySceneUiManager : MonoBehaviour {
         while (currentTime < fadeDuration) {
             currentTime += Time.deltaTime;
             float alpha = Mathf.Lerp(0, 1, currentTime / fadeDuration);
-            fadeImage.color = new Color(0, 0, 0, alpha); 
-            yield return null; 
+            fadeImage.color = new Color(0, 0, 0, alpha);
+            yield return null;
         }
 
         SceneManager.LoadScene(sceneName);
     }
 
     public void NextLevelButton() {
-        int levelId = PlayerPrefs.GetInt(StringManager.levelId);
-        PlayerPrefs.SetInt(StringManager.levelId, levelId + 1);
-        if (PlayerPrefs.GetInt(StringManager.levelId) <= 5)
-            PlayerPrefs.SetInt(StringManager.layoutId, 0);
-        else
-            PlayerPrefs.SetInt(StringManager.layoutId, 1);
         FindObjectOfType<SoundManager>().PlayClickSound();
-        LoadScene("PlayScene");
+        if (PlayerPrefs.GetInt(StringManager.levelId) == 10) {
+            LoadScene("SelectLevelScene");
+        } else {
+            int levelId = PlayerPrefs.GetInt(StringManager.levelId);
+            PlayerPrefs.SetInt(StringManager.levelId, levelId + 1);
+            if (PlayerPrefs.GetInt(StringManager.levelId) <= 5)
+                PlayerPrefs.SetInt(StringManager.layoutId, 0);
+            else
+                PlayerPrefs.SetInt(StringManager.layoutId, 1);
+            LoadScene("PlayScene");
+        }
     }
 
     public void LoadLevelScene() {
