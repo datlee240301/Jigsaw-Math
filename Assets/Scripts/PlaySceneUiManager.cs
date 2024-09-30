@@ -25,7 +25,8 @@ public class PlaySceneUiManager : MonoBehaviour {
         if (SceneManager.GetActiveScene().name == "PlayScene") {
             stepText.text = "STEP: " + step.ToString();
             levelText.text = "LEVEL " + PlayerPrefs.GetInt(StringManager.levelId).ToString();
-            coinNumber = PlayerPrefs.GetInt(StringManager.coinNumber);
+            coinNumber = PlayerPrefs.GetInt(StringManager.coinNumber,10);
+            //PlayerPrefs.SetInt(StringManager.coinNumber, coinNumber);
             coinNumberText.text = coinNumber.ToString();
             if (PlayerPrefs.GetInt(StringManager.layoutId) == 1) {
                 camera.orthographicSize = 6.16f;
@@ -33,7 +34,8 @@ public class PlaySceneUiManager : MonoBehaviour {
             }
         } else if (SceneManager.GetActiveScene().name == "HomeScene") {
             SetMusicStatus();
-            coinNumber = PlayerPrefs.GetInt(StringManager.coinNumber);
+            coinNumber = PlayerPrefs.GetInt(StringManager.coinNumber, 10);
+            PlayerPrefs.SetInt(StringManager.coinNumber, coinNumber);
             coinNumberText.text = coinNumber.ToString();
         }
 
@@ -145,7 +147,7 @@ public class PlaySceneUiManager : MonoBehaviour {
     }
 
     public void MinusCoin() {
-        int newCoinNumber = PlayerPrefs.GetInt(StringManager.coinNumber) - 5;
+        int newCoinNumber = PlayerPrefs.GetInt(StringManager.coinNumber) - 2;
         PlayerPrefs.SetInt(StringManager.coinNumber, newCoinNumber);
         coinNumberText.text = newCoinNumber.ToString();
     }
